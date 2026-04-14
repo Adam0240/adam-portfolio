@@ -57,6 +57,7 @@ function App() {
                         This section will include GitHub, LinkedIn, email, and other
                         professional links.
                     </p>
+                    <p>abbaduskya@gmail.com</p>
                 </section>
             </main>
         </div>
