@@ -8,8 +8,15 @@ import mobileAppSwaggerImage from './assets/MA_SwaggerConnection.png'
 import cppScreenshot1 from './assets/C++ Screenshot1.png'
 import cppScreenshot2 from './assets/C++ Screenshot2.png'
 import cppGameExe from './assets/AdamAC++Final_Arcadia.exe?url'
+import bgImage from './assets/website_intro_bg.png'
 
 function App() {
+    const aboutStats = [
+        { value: '4+', label: 'Years Experience' },
+        { value: '15+', label: 'Technologies' },
+        { value: '5+', label: 'Projects Completed' },
+    ]
+
     const experienceItems = [
         {
             title: 'STEAM Specialist',
@@ -133,22 +140,71 @@ function App() {
             </nav>
 
             <header className="hero">
-                <p className="eyebrow">
-                    Software Engineer | STEAM Specialist | Interactive 3D Developer
-                </p>
+                <div className="hero-background">
+                    <img
+                        src={bgImage}
+                        alt=""
+                        aria-hidden="true"
+                        className="hero-background-image"
+                    />
+                </div>
 
-                <h1>Adam Abbadusky</h1>
+                <div className="hero-overlay" />
+                <div className="hero-glow hero-glow-primary" />
+                <div className="hero-glow hero-glow-accent" />
 
-                <p className="intro">
-                    I build real systems, including backend APIs, interactive
-                    applications, and projects that connect software with physical
-                    tech.
-                </p>
+                <div className="hero-content">
+                    <h1 className="hero-name">Adam Abbadusky</h1>
+
+                    <p className="hero-role-line">
+                        Software Engineer &amp; STEAM Specialist
+                    </p>
+
+                    <p className="intro">
+                        Building full-stack applications, backend APIs, and
+                        interactive systems that connect software with real-world
+                        technology.
+                    </p>
+
+                    <div className="hero-actions">
+                        <a href="#projects" className="hero-button hero-button-primary">
+                            View My Work
+                        </a>
+
+                        <a href="#contact" className="hero-button hero-button-secondary">
+                            Get In Touch
+                        </a>
+                    </div>
+
+                    <div className="hero-contact-links">
+                        <a
+                            href="https://github.com/Adam0240"
+                            target="_blank"
+                            rel="noreferrer"
+                            className="hero-contact-link"
+                        >
+                            GitHub
+                        </a>
+
+                        <a
+                            href="mailto:abbaduskya@gmail.com"
+                            className="hero-contact-link"
+                        >
+                            Email
+                        </a>
+                    </div>
+                </div>
+
+                <a href="#about" className="hero-scroll-indicator" aria-label="Scroll to about section">
+                    <span className="hero-scroll-mouse">
+                        <span className="hero-scroll-wheel" />
+                    </span>
+                </a>
             </header>
 
             <main className="content-sections">
                 <section id="about" className="content-section">
-                    <h2>About</h2>
+                    <h2>About Me</h2>
                     <p>
                         I am a software developer and STEAM Specialist with
                         experience building full-stack applications, APIs, and
@@ -173,6 +229,15 @@ function App() {
                         Bachelor&apos;s degree in Computer Engineering, expected
                         December 2026.
                     </p>
+
+                    <div className="about-stats-grid">
+                        {aboutStats.map((stat) => (
+                            <article key={stat.label} className="about-stat-card">
+                                <div className="about-stat-value">{stat.value}</div>
+                                <div className="about-stat-label">{stat.label}</div>
+                            </article>
+                        ))}
+                    </div>
                 </section>
 
                 <section id="experience" className="content-section">
@@ -227,7 +292,7 @@ function App() {
                 </section>
 
                 <section id="projects" className="content-section">
-                    <h2>Projects</h2>
+                    <h2>Featured Projects</h2>
 
                     <div className="project-grid">
                         <article className="project-card">
@@ -410,7 +475,7 @@ function App() {
                 </section>
 
                 <section id="skills" className="content-section">
-                    <h2>Skills</h2>
+                    <h2>Skills & Technology</h2>
 
                     <div className="skills-grid">
                         {skillGroups.map((group) => (
@@ -450,7 +515,7 @@ function App() {
                 </section>
 
                 <section id="contact" className="content-section">
-                    <h2>Contact</h2>
+                    <h2>Contact Me</h2>
 
                     <div className="contact-grid">
                         <article className="contact-card">
@@ -485,6 +550,23 @@ function App() {
                     </div>
                 </section>
             </main>
+
+            <footer className="site-footer">
+                <div className="site-footer-inner">
+                    <div className="site-footer-name">Adam Abbadusky</div>
+
+                    <p className="site-footer-message">
+                        Software Engineer and STEAM Specialist focused on building
+                        practical software systems, interactive applications, and
+                        technology-driven solutions that connect code with real-world
+                        use.
+                    </p>
+
+                    <div className="site-footer-bottom">
+                        <p>&copy; 2026 Adam Abbadusky. Built with React &amp; Vite.</p>
+                    </div>
+                </div>
+            </footer>
         </div>
     )
 }
